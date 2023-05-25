@@ -1,21 +1,14 @@
-// script.js
+function changePortraitStyle() {
+    const portrait = document.querySelector('.portrait');
+    portrait.style.display = "block";
+  }
+  
+  document.querySelector('.portrait').addEventListener('click', changePortraitStyle);
 
-// Function to smooth scroll to an anchor
-function scrollToAnchor(anchor) {
-    const element = document.querySelector(anchor);
-    if (element) {
-        element.scrollIntoView({
-            behavior: 'smooth'
-        });
-    }
+  // Create a function to create a light and dark mode button   
+  function changeMode() {
+    const html = document.querySelector('html');
+    html.classList.toggle('dark');  // Add or remove the class "dark" to the HTML element
 }
 
-// Event listener for navigation links
-const navLinks = document.querySelectorAll('header nav ul li a');
-navLinks.forEach(link => {
-    link.addEventListener('click', function (event) {
-        event.preventDefault();
-        const anchor = this.getAttribute('href');
-        scrollToAnchor(anchor);
-    });
-});
+document.querySelector('button').addEventListener('click', changeMode);
